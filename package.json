@@ -1,0 +1,29 @@
+{
+  "name": "namastereactdev",
+  "version": "1.0.0",
+  "description": "This is the live course Boot camp",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NagendraPasupuleti/NamasteReactDev.git"
+  },
+  "author": "Nagendra Pasupuleti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NagendraPasupuleti/NamasteReactDev/issues"
+  },
+  "homepage": "https://github.com/NagendraPasupuleti/NamasteReactDev#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.class
+*.py[cod]
+*.log
+.parcel-cache

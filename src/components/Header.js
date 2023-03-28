@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 const Title = () => (
   <a href="/">
     <img
@@ -7,7 +8,12 @@ const Title = () => (
     />
   </a>
 );
+
 export const Header = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const authUser = () => {
+  //   setIsAuthenticated(false ? true : false);
+  // };
   return (
     <div className="header">
       <Title />
@@ -17,6 +23,11 @@ export const Header = () => {
           <li>About </li>
           <li>Contact </li>
           <li>Cart </li>
+          {isAuthenticated ? (
+            <button onClick={() => setIsAuthenticated(false)}>LogOut</button>
+          ) : (
+            <button onClick={() => setIsAuthenticated(true)}>Login</button>
+          )}
         </ul>
       </div>
     </div>

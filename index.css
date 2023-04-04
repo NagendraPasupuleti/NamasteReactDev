@@ -21,15 +21,17 @@
   /* padding: 10px;
 */
 }
-.nav-items > ul > li {
-  padding: 10px;
+.nav-items > ul > a {
+  padding: 5px;
+  text-decoration: none !important;
 }
 .card {
   width: 200px;
   border: 2px solid violet;
   padding: 10px;
   margin: 10px;
-  height: 300px;
+  height: 350px;
+  border-radius: 5px;
   /* //max-height: 00px; */
 }
 
@@ -39,4 +41,11 @@
 .restro_cards {
   display: flex;
   flex-wrap: wrap;
+}
+.shimmer_card {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  background: lightgray;
+  margin: 23px;
 }

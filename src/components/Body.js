@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { restaurantCards } from "./Constant";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 export const Body = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -63,8 +64,10 @@ export const Body = () => {
         ) : (
           filteredRestaurants.map((res) => {
             return (
-              <div key={res?.data?.id}>
-                <RestaurantCard {...res.data} />
+              <div key={res.data.id}>
+                <Link to={"/restuarant" + res?.data?.id}>
+                  <RestaurantCard {...res.data} />
+                </Link>
               </div>
             );
           })

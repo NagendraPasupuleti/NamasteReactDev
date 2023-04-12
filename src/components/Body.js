@@ -3,22 +3,14 @@ import { useState, useEffect } from "react";
 import { restaurantCards } from "./Constant";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import { filteredData } from "./utils/Helper";
+import useOnline from "./utils/useOnline";
 
 export const Body = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  //const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-
-  function filteredData(searchText, restaurants) {
-    const filteredData = restaurants.filter((res) =>
-      res?.data?.name
-        ?.toLowerCase()
-        ?.trim()
-        ?.includes(searchText?.toLowerCase()?.trim())
-    );
-    return filteredData;
-  }
 
   useEffect(() => {
     getAllRestaurants();
@@ -32,6 +24,16 @@ export const Body = () => {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
+
+  const online = useOnline();
+  if (!online) {
+    return (
+      <h2>
+        Looks like your seems offline! Make sure your internet connectivity
+      </h2>
+    );
+  }
+
   // this is known as early return(it won't render the component)
   if (!allRestaurants) return null;
 

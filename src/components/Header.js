@@ -32,6 +32,9 @@ export const Header = () => {
           <Link to="/cart">
             <li>Cart </li>
           </Link>
+          <Link to="/instamart">
+            <li>Instamart </li>
+          </Link>
           {isAuthenticated ? (
             <button onClick={() => setIsAuthenticated(false)}>LogOut</button>
           ) : (
